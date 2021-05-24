@@ -26,10 +26,12 @@ bearer_token = os.environ.get("BEARER_TOKEN")
 # FULL ARCHIVE SEARCH
 search_url = "https://api.twitter.com/1.1/tweets/search/fullarchive/staging.json"
 # 30-DAY ENDPOINT
-# search_url = "https://api.twitter.com/1.1/tweets/search/30day/dev.json"
+# search_url = "https://api.twitter.com/1.1/tweets/search/30day/staging.json"
 
 # query parameters
-query_params = {'query': 'from:technicollins', 'since_id':None}
+query_params = {'query': 'from:technicollins', 'since_id': None, 'fromDate': '200612220000', 'maxResults': 100}
+# if you don't specify the fromDate, only tweets from the last 30 days will be returned
+# set max results to 500 if using the paid premium tiers
 
 
 def create_headers(bearer_token):
